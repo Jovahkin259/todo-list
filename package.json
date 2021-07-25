@@ -1,0 +1,35 @@
+{
+  "name": "todo-list",
+  "version": "1.0.0",
+  "description": "A simple Todo-List application written using the PERN stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jovahkin259/todo-list.git"
+  },
+  "keywords": [
+    "react",
+    "express",
+    "postgres",
+    "node"
+  ],
+  "author": "Joshua Astle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jovahkin259/todo-list/issues"
+  },
+  "homepage": "https://github.com/Jovahkin259/todo-list#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "pg": "^8.6.0",
+    "prettier": "^2.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.31.0",
+    "eslint-plugin-react": "^7.24.0"
+  }
+}
