@@ -52,6 +52,19 @@ app.get("/todos/:id", async (req, res) => {
 });
 
 // update todo
+app.put("/todos/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { description } = req.body;
+    const updateTodo = await db.query(
+      "UPDATE todo SET description = $1 WHERE id = $2 RETURNING *",
+      [description, id]
+    );
+    res.json(updateTodo.rows[0]);
+  } catch (error) {
+    console.log(error.message);
+  }
+});
 
 // delete todo
 
