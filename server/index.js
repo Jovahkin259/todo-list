@@ -41,6 +41,16 @@ app.get("/todos", async (req, res) => {
 
 // get single todo
 
+app.get("/todos/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const todo = await db.query("SELECT * FROM todo WHERE id = $1", [id]);
+    res.json(todo.rows);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
 // update todo
 
 // delete todo
