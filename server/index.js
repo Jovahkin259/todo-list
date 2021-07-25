@@ -14,19 +14,30 @@ app.use(bodyParser.json());
 // Routes
 
 // create todo
+
 app.post("/todos", async (req, res) => {
   try {
     const { description } = req.body;
     const newTodo = await db.query(
-      "INSERT INTO todo ( description) VALUES($1);",
+      "INSERT INTO todo ( description) VALUES($1) RETURNING *;",
       [description]
     );
+    res.json(newTodo.rows[0]);
   } catch (error) {
     console.log(error.message);
   }
 });
 
 // get all todo's
+
+app.get("/todos", async (req, res) => {
+  try {
+    const allTodos = await db.query("SELECT * FROM todo;");
+    res.json(allTodos.rows);
+  } catch (error) {
+    console.log(error.message);
+  }
+});
 
 // get single todo
 
