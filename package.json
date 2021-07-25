@@ -24,6 +24,7 @@
   "homepage": "https://github.com/Jovahkin259/todo-list#readme",
   "dependencies": {
     "cors": "^2.8.5",
+    "eslint-prettier-config": "^1.0.1",
     "express": "^4.17.1",
     "pg": "^8.6.0",
     "prettier": "^2.3.2"
