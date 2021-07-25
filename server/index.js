@@ -1,6 +1,11 @@
-const express = require('express')
-const PORT = 5000 || process.env.PORT
-const app = express()
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+const PORT = 5000 || process.env.PORT;
+const app = express();
 
-app.listen(PORT, () => console.log(`Server listening on PORT: ${PORT}`))
+// Middleware
+app.use(cors());
+app.use(bodyParser.json());
 
+app.listen(PORT, () => console.log(`Server listening on PORT: ${PORT}`));
